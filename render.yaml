@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: tbd
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    # Render's health check — /api/health is always 200 (no auth required)
+    healthCheckPath: /api/health
+    envVars:
+      - key: SPREADSHEET_ID
+        sync: false          # you set this manually in the Render dashboard
+      - key: GOOGLE_CREDENTIALS_JSON
+        sync: false          # paste the full contents of credentials.json here
+      - key: API_SECRET
+        generateValue: true  # Render auto-generates a strong random secret
