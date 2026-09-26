@@ -94,7 +94,7 @@ export default function AccountsList() {
           <div className="flex gap-6 overflow-x-auto pb-2 -mx-8 px-8 w-full">
             {columns.map((col, colIdx) => (
               <div key={colIdx} className="flex flex-col gap-6 flex-shrink-0">
-                {col.map((item, itemIdx) =>
+                {col.map((item, _itemIdx) =>
                   item.kind === 'account' ? (
                     <AccountCard
                       key={item.account.id}
