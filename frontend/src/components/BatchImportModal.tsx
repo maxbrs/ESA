@@ -149,10 +149,10 @@ const TYPE_COLOR: Record<TransactionType, string> = {
   refill:     'text-emerald-400',
   expense:    'text-red-400',
   income:     'text-blue-400',
-  settlement: 'text-violet-400'
+  settlement: 'text-violet-400',
 }
 const TYPE_LABEL: Record<TransactionType, string> = {
-  refill: 'Refill', expense: 'Expense', income: 'Income', settlement: 'Settlement'
+  refill: 'Refill', expense: 'Expense', income: 'Income', settlement: 'Settlement',
 }
 
 export default function BatchImportModal({
