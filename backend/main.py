@@ -17,9 +17,8 @@ app = FastAPI(title="Expense Sharing App")
 @app.middleware("http")
 async def auth_middleware(request: Request, call_next):
     api_secret = os.environ.get("API_SECRET", "")
-    exempt_paths = {"/api/health", "/api/me"}
 
-    if api_secret and request.url.path.startswith("/api/") and request.url.path not in exempt_paths:
+    if api_secret and request.url.path.startswith("/api/") and request.url.path != "/api/health":
         auth_header = request.headers.get("Authorization", "")
         if auth_header != f"Bearer {api_secret}":
             return JSONResponse({"detail": "Unauthorized"}, status_code=401)
